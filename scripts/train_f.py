@@ -56,9 +56,9 @@ class TrainF:
         # freeze & grad
         for k, v in fuse.generator.named_parameters():
             v.requires_grad = True  # train all layers
-            if any(x in k for x in config.train.freeze):
-                logging.info(f'freezing {k}')
-                v.requires_grad = False
+            # if any(x in k for x in config.train.freeze):
+            #     logging.info(f'freezing {k}')
+            #     v.requires_grad = False
 
         # init optimizer
         o_cfg = config.optimizer
